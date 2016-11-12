@@ -1,23 +1,49 @@
-import java.util.Scanner;
+import java.util.ArrayList;
 
-/**
- * Created by anastasia on 11/11/2016.
- */
 public class Worker {
 
-    private String username;
-    private int workerId;
+    private String name;
+    private String shift;
+    private ArrayList<Task> tasks;
 
-    public Worker () {
-        this.username = this.setUsername();
-        this.workerId = ;
+
+    public Worker (String name, String shift ) {
+        this.name = name;
+        this.shift = shift;
+        this.tasks = new ArrayList<Task>();
     }
 
-    public void setUsername (Scanner reader) {
-        this.username = reader.nextLine();
-
+    public String getName () {
+        return this.name;
     }
 
+    public String getShift () {
+        return this.shift;
+    }
 
+    public void assignTask(Task task) {
+        this.tasks.add(task);
+    }
 
+    public String printArrayList(ArrayList<Task> tasks) {
+        String result = " ";
+        for (int i = 0; i < tasks.size(); i++) {
+            if (i == tasks.size() - 1) {
+                result += tasks.get(i);
+            } else if (tasks.isEmpty()) {
+                result = " N/A ";
+            } else if (tasks.size() == 1)  {
+                result += tasks.get(i);
+
+            } else {
+                result += tasks.get(i) + ", ";
+            }
+
+        }
+        return result;
+    }
+
+    public String toString() {
+        return this.getName() + " " + this.getShift() + " " + this.printArrayList(tasks);
+    }
 }
