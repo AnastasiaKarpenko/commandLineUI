@@ -27,19 +27,22 @@ public class Worker {
 
     public String printArrayList(ArrayList<Task> tasks) {
         String result = " ";
-        for (int i = 0; i < tasks.size(); i++) {
-            if (i == tasks.size() - 1) {
-                result += tasks.get(i);
-            } else if (tasks.isEmpty()) {
-                result = " N/A ";
-            } else if (tasks.size() == 1)  {
-                result += tasks.get(i);
+        if (tasks.isEmpty()) {
+            result = " N/A ";
+        } else {
+            for (int i = 0; i < tasks.size(); i++) {
+                if (i == tasks.size() - 1) {
+                    result += tasks.get(i);
+                } else if (tasks.size() == 1)  {
+                    result += tasks.get(i);
 
-            } else {
-                result += tasks.get(i) + ", ";
+                } else {
+                    result += tasks.get(i) + ", ";
+                }
             }
-
         }
+
+
         return result;
     }
 

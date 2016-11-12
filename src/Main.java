@@ -21,14 +21,23 @@ public class Main {
         worker3.assignTask(task2);
         worker4.assignTask(task2);
         worker5.assignTask(task3);
-        worker6.assignTask(task4);
+//        worker6.assignTask(task4);
 
-        System.out.println(worker1.toString());
-        System.out.println(worker2.toString());
-        System.out.println(worker3.toString());
-        System.out.println(worker4.toString());
-        System.out.println(worker5.toString());
-        System.out.println(worker6.toString());
+//        System.out.println(worker1.toString());
+//        System.out.println(worker2.toString());
+//        System.out.println(worker3.toString());
+//        System.out.println(worker4.toString());
+//        System.out.println(worker5.toString());
+//        System.out.println(worker6.toString());
+
+        Roster roster = new Roster();
+        roster.addWorker(worker1);
+        roster.addWorker(worker2);
+        roster.addWorker(worker3);
+        roster.addWorker(worker4);
+        roster.addWorker(worker5);
+        roster.addWorker(worker5);
+        roster.print();
 
     }
 

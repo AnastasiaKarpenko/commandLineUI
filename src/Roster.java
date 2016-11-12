@@ -1,17 +1,25 @@
-import java.util.HashMap;
+import java.util.ArrayList;
 
 
 public class Roster {
 
-    private HashMap<Worker, Task> roster;
+    private ArrayList<Worker> roster;
 
-    public Roster() {
-        this.roster = new HashMap<Worker, Task>();
+    public Roster () {
+        this.roster = new ArrayList<Worker>();
     }
 
-    public void addWorker(Worker worker, Task task) {
-        roster.put(worker, task);
+    public void addWorker(Worker worker) {
+        roster.add(worker);
     }
+
+    public void print () {
+        for (Worker worker : roster) {
+            System.out.println(worker.toString());
+        }
+    }
+
+
 
 
 }
